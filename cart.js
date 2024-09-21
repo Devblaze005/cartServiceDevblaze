@@ -108,3 +108,6 @@ export async function updateCart( requestBody){
     const cart = await getCart(cart_id)
     return cart;   
 }
+
+module.exports.queries = queries;
+module.exports.cart_queries = cart_queries;

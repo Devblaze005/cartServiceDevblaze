@@ -1,4 +1,4 @@
-import { cart_queries, queries } from './cart';
+const { cart_queries, queries } = require("./cart");
 export const handler = async (event) => {
     try{
         console.log("Event : ", event);
