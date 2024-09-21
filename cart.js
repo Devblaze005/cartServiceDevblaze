@@ -28,6 +28,8 @@ export async function cart_queries(event){
     let requestBody = null;
     if(event.body != null){
         requestBody = JSON.parse(event.body);
+
+        
     }
     let responseBody = null;
     if(event.pathParameters != null)

@@ -1,4 +1,4 @@
-import { handler } from './index.mjs'
+import { handler } from './index.js'
 var event = {
   resource: '/carts',
   path: '/carts',
