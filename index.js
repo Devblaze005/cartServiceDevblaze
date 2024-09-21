@@ -1,5 +1,5 @@
 const { cart_queries, queries } = require("./cart");
-export const handler = async (event) => {
+module.exports.handler = async (event) => {
     try{
         console.log("Event : ", event);
         const responseBody = await delegateRequest(event);

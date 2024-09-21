@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const { executeGetCommand, executeScanCommand, executePutCommand, executeUpdateCommand } = require("./common");
-export async function queries(event){
+async function queries(event){
     let requestMethod = event.httpMethod;
     let requestBody = null;
     if(event.body != null){
@@ -23,7 +23,7 @@ export async function queries(event){
     return responseBody;
 }
 
-export async function cart_queries(event){
+async function cart_queries(event){
     let requestMethod = event.httpMethod;
     let requestBody = null;
     if(event.body != null){
@@ -55,7 +55,7 @@ export async function cart_queries(event){
     return responseBody;
 }
 
-export async function getCart(account_id, cart_id){
+async function getCart(account_id, cart_id){
     if(cart_id == null || account_id == null)
         throw new Error("Invalid cart id");
     let expressionAttributeValues = {};
@@ -70,7 +70,7 @@ export async function getCart(account_id, cart_id){
     return response;
 }
 
-export async function addCart( requestBody){
+async function addCart( requestBody){
     if(requestBody == null)
         throw new Error("Invalid Request Body");
     requestBody.cart_id = crypto.randomUUID();
@@ -85,7 +85,7 @@ export async function addCart( requestBody){
     return params.Item;
 }
 
-export async function updateCart( requestBody){
+async function updateCart( requestBody){
     requestBody.cart_updated_at = (new Date()).toString();
 
     let updateExpression = "set "
